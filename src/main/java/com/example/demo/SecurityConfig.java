@@ -28,8 +28,8 @@ public class SecurityConfig {
 				requestMatchers("/*").permitAll().
 				requestMatchers("/detail/**").permitAll().
 				requestMatchers("/cartItemApi/**").permitAll().
-//				requestMatchers("/admin/**").permitAll().
-				requestMatchers("/admin/**").hasAuthority("ADMIN").
+				requestMatchers("/admin/**").permitAll().
+//				requestMatchers("/admin/**").hasAuthority("ADMIN").
 				anyRequest().authenticated())
 			.formLogin(login->login.loginPage("/logon").loginProcessingUrl("/logon")
 						.usernameParameter("username").passwordParameter("password").
